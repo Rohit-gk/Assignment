@@ -7,20 +7,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+  <div id="error"></div>
     <div class="container mt-3">
         <h2>Javascript Assignment-1</h2>
-        <h3>Form</h3>
-        <form>
+        <form name="myform" onsubmit="return validateform()">
           <div class="mb-3 mt-3">
             <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+            <small></small>
           </div>
 
           <div class="mb-3">
             <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+            <small id="lname_error" class="error"></small>
           </div>
 
           <div class="mb-3">
             <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <small></small>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" class="form-control" id="age" placeholder="Enter age">
+            <small></small>
           </div>
 
           <select class="form-select mb-3" name="country" id="country">
@@ -44,6 +52,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>Age</th>
             <th>Country</th>
             <th>State</th>
             <th>City</th>
@@ -60,12 +69,14 @@ document.getElementById("submit").onclick=function()
                 var fname = row.insertCell(0);
                 var lname = row.insertCell(1);
                 var email = row.insertCell(2);
-                var country = row.insertCell(3);
-                var state = row.insertCell(4);
-                var city = row.insertCell(5);
+                var age = row.insertCell(3);
+                var country = row.insertCell(4);
+                var state = row.insertCell(5);
+                var city = row.insertCell(6);
                 fname.innerHTML = document.getElementById("fname").value;
                 lname.innerHTML = document.getElementById("lname").value;
                 email.innerHTML = document.getElementById("email").value;
+                age.innerHTML = document.getElementById("age").value;
                 country.innerHTML = document.getElementById("country").value;
                 state.innerHTML = document.getElementById("state").value;
                 city.innerHTML = document.getElementById("city").value;
@@ -115,6 +126,8 @@ window.onload = function() {
     }
   }
 }
+
+
 </script>
 </body>
 </html>
